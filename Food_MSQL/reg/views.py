@@ -57,7 +57,7 @@ def home(request):
             cmd.user = request.user
             print(cmd)
             cmd.save()
-            create_action(cmd, 'has created food')
+            #create_action(cmd, 'has created food')
             return redirect("home")
     return render(request,'home.html',{'form':form,'post':post, 'count':count})
 
@@ -91,20 +91,24 @@ def email(request,id):
     email_to = User.objects.get(username = a).email
     if email_to:
         Name = post.user
+        Name = str(Name)
         Type_of_food = post.type
+        
         No_of_person_feed =   post.amount
+        No_of_person_feed = str(No_of_person_feed)
         description =  post.description
         ini_time  = post.itime
-        final_time =  post.ftime
+        final_time =  post.finaltime
+        final_time = str(final_time)
         landmark =  post.landmark
         town =  post.town
         dist =  post.dist
         state =  post.state
         mobile = post.mobile
-        message = "Hello Ma'am/Sir , \n"
+        mobile = str(mobile)
+        message = "Hello Ma'am/Sir,\t "+"\n\n"+"Name:\t"+Name+ "\n"+"Type of food:\t"+Type_of_food+"\n"+"No. of person: \t"+ No_of_person_feed + "\n" + "Description: \t" +description + "\n" + "Land: \t "+ landmark + "\n"+"Town: \t"+town+"\n" + "District: \t" + dist +"\n \n" +"For more details contact ......\t" + mobile +"\n"
         print(message)
-        print(type(message))
-        send_mail('Confermation Recipt',message,'abcdef7700000000@gmail.com',[email_to],fail_silently=False)
+        send_mail('These are the details you request',message,'abcdef7700000000@gmail.com',[email_to],fail_silently=False)
         return redirect('home')
     else:
         return redirect('home')

@@ -19,7 +19,7 @@ class Post(models.Model):
     amount = models.PositiveIntegerField()
     description = models.CharField(max_length=200)
     itime = models.DateTimeField(auto_now_add=True, blank=True)
-    ftime = models.DateTimeField(blank=True)
+    finaltime = models.DateTimeField(blank=True)
     landmark = models.CharField(max_length=30)
     town = models.CharField(max_length=30)
     dist = models.CharField(max_length=30)

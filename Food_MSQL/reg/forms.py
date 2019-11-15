@@ -26,7 +26,7 @@ class organisationForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['name', 'type', 'amount', 'description', 'ftime', 'landmark', 'town', 'dist', 'state', 'pin', 'mobile']
+        fields = ['name', 'type', 'amount', 'description', 'finaltime', 'landmark', 'town', 'dist', 'state', 'pin', 'mobile']
 
 
 class addressForm(forms.ModelForm):

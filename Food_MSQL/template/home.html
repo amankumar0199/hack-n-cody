@@ -153,7 +153,7 @@
                 {% with x=request.user|check_donor %}
                 {% if x %}
                     <div class="form-row">
-
+					
                       <!-- table -->
                       <div class="col-md-6">
                         {% with ad=request.user|add %}
@@ -162,9 +162,9 @@
                           <thead>
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">First</th>
-                              <th scope="col">Last</th>
-                              <th scope="col">Handle</th>
+                              <th scope="col">Food Type</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Place</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -172,7 +172,7 @@
                             {% for i in ad %}
                             <tr>
                               <th scope="row">--</th>
-                              <td>{{i.type}}</td>
+                              <td>{{i.type|ftype}}</td>
                               <td>{{i.amount}}</td>
                               <td>{{i.dist}}</td>
                             </tr>
@@ -184,12 +184,14 @@
                               <td>No Record.</td>
                               <td>No Record.</td>
                             </tr>
+							<h1 class="display-4">You haven't contributet yet.</h1>
+							{% endif %}
                           </tbody>
                         </table>
-                        {% endif %}
+                        
                         {% endwith %}
 
-                        <h1 class="display-4">You haven't contributet yet.</h1>
+                        
                       </div>
 
 
@@ -216,7 +218,7 @@
 
                         </div>
                         <div class="form-group col-md-6 mb-0">
-                          {{form.ftime|as_crispy_field}}
+                          {{form.finaltime|as_crispy_field}}
 
                         </div>
                         <div class="form-group col-md-6 mb-0">
@@ -294,7 +296,7 @@
                             Amount :  {{i.amount}}<br>
                             Description :  {{i.description}}<br>
                             Initial Time  : {{ i.itime }}<br>
-                            Final time :  {{i.ftime}}<br>
+                            Final time :  {{i.finaltime}}<br>
                             Landmark :  {{i.landmark}}<br>
                             town :  {{i.town }}<br>
                             District : {{ i.dist }}<br>
