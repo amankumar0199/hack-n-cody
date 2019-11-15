@@ -37,9 +37,15 @@
         </a>
       </div>
 
+      {% if user.is_authenticated %}
       <a href="{% url 'home' %}" class="nav-link">
       <button class="btn btn-success">Home</button>
       </a>
+      {% else %}
+      <a href="{% url 'register' %}" class="nav-link">
+      <button class="btn btn-success">Home</button>
+      </a>
+      {% endif %}
     </div>
   </nav>
   <div class="page-header header-filter" data-parallax="true" style='background-image: url("{% static 'assets/img/old-man.jpg' %}")'>

@@ -99,7 +99,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'food_app',
         'USER' : 'root',
-        'PASSWORD' : 'root@123',
+        # 'PASSWORD' : 'root@123',
+        'PASSWORD' : '0000',
     }
 }
 
