@@ -1,6 +1,6 @@
 from django import template
 from django.contrib.auth.models import User
-from reg.models import Organisation
+from reg.models import Organisation, Post
 register=template.Library()
 
 def check(value):
@@ -29,3 +29,10 @@ def ftype(value):
         a = "Stale Food."
     return a
 register.filter('ftype',ftype)
+
+def add(value):
+    username = value
+    add = Post.objects.filter(user=username)
+    print("a",add)
+    return add
+register.filter('add',add)

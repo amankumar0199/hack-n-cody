@@ -142,8 +142,6 @@
     <!--sidebar end-->
 
 
-
-
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
@@ -156,10 +154,9 @@
                 {% if x %}
                     <div class="form-row">
 
-
                       <!-- table -->
                       <div class="col-md-6">
-                        <!-- if x %} -->
+                        {% with ad=request.user|add %}
                         <h1 class="display-4">Your past contributions</h1>
                         <table class="table">
                           <thead>
@@ -171,31 +168,29 @@
                             </tr>
                           </thead>
                           <tbody>
+                            {% if ad %}
+                            {% for i in ad %}
                             <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
+                              <th scope="row">--</th>
+                              <td>{{i.type}}</td>
+                              <td>{{i.amount}}</td>
+                              <td>{{i.dist}}</td>
                             </tr>
+                            {% endfor %}
+                            {% else %}
                             <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
+                              <th scope="row">--</th>
+                              <td>No Record.</td>
+                              <td>No Record.</td>
+                              <td>No Record.</td>
                             </tr>
                           </tbody>
                         </table>
+                        {% endif %}
+                        {% endwith %}
 
-                        <!-- { else  -->
                         <h1 class="display-4">You haven't contributet yet.</h1>
                       </div>
-
 
 
                       <!-- form -->
@@ -256,9 +251,6 @@
                       </form>
                       </div>
                       <hr>
-
-
-
 
                 </div>
 
