@@ -9,10 +9,10 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
   <!-- Favicons -->
-  <link href="{% static 'img/favicon.png' %}" rel="icon"/>
+
   <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon"/>
 
   <!-- Bootstrap core CSS -->
@@ -22,6 +22,8 @@
 <link href="{% static 'lib/font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/zabuto_calendar.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'lib/gritter/css/jquery.gritter.css' %}" />
+<link rel="title icon" type="image/png" href="http://pngimg.com/uploads/letter_f/letter_f_PNG72.png">
+
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -139,65 +141,125 @@
     </aside>
     <!--sidebar end-->
 
+
+
+
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
         <div class="row">
-          <div class="col-lg-9">
+
+
+          <div class="col-lg-9 col-md-6">
               <div class="container">
                 {% with x=request.user|check_donor %}
-                {% if x%}
-                  <h1>Start Contributing</h1>
-                  <form id="" method="post">
-                    {% csrf_token %}
+                {% if x %}
                     <div class="form-row">
-                      <div class="form-group col-md-6 mb-0">
-                        {{ form.name|as_crispy_field }}
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{ form.type|as_crispy_field }}
+
+
+                      <!-- table -->
+                      <div class="col-md-6">
+                        <!-- if x %} -->
+                        <h1 class="display-4">Your past contributions</h1>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!-- { else  -->
+                        <h1 class="display-4">You haven't contributet yet.</h1>
                       </div>
 
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.amount|as_crispy_field}}
+
+
+                      <!-- form -->
+
+
+                      <div class="col-md-6">
+                        <h1>Start Contributing</h1>
+                        <form id="" method="post">
+                          {% csrf_token %}
+
+                        <div class="form-group col-md-6 mb-0">
+                          {{ form.name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{ form.type|as_crispy_field }}
+                        </div>
+
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.amount|as_crispy_field}}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.description|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.ftime|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.landmark|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.town|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.dist|as_crispy_field}}
+
+                        </div>
+
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.state|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.pin|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{form.mobile|as_crispy_field}}
+
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          <button class = "btn btn-danger btn-block" type="submit">Submit</button>
+
+                        </div>
+                      </form>
                       </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.description|as_crispy_field}}
+                      <hr>
 
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.ftime|as_crispy_field}}
 
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.landmark|as_crispy_field}}
 
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.town|as_crispy_field}}
 
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.dist|as_crispy_field}}
-
-                      </div>
-
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.state|as_crispy_field}}
-
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.pin|as_crispy_field}}
-
-                      </div>
-                      <div class="form-group col-md-6 mb-0">
-                        {{form.mobile|as_crispy_field}}
-
-                      </div>
-                    </div>
-
-                    <button class = "btn btn-danger" type="submit">Submit</button>
-                  </form>
                 </div>
 
                 {% else %}
