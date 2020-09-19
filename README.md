@@ -4,9 +4,9 @@ It aims to reduce wastage of food upto 75% by connecting 2 types of end users(br
 2. Needy (who needs food)
 
 we divided food in 3 categories
-1. 1 month older
-2. 3 months older
-3. 3+ months older
+1. Raw
+2. Fresh
+3. Wastage
 
 As soon as Donor submits the form data, all the users who have created account in Needy category will get notification on their mail and profile as well.
 We implemented this feature using Django Signals (pre-save).
