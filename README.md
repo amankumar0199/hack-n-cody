@@ -24,11 +24,11 @@ Other working App screenshots are given below :
 <img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Login.png" alt="LogIn" align="center" width="70%"> 
 
 ## Donor Dashboard
-<img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Farmer%20Dashboard.png" alt="Donor Dashboard" align="center" width="70%"> 
+<img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Food%20Donor%201.png" alt="Donor Dashboard" align="center" width="70%"> 
 
 ## Donor Dashboard Update form
 <img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Farmer%20Dashboard%20Update.png" alt="Donor Dashboard Update" align="center" width="70%"> 
 
 ## Needy Dashboard
-<img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Partener%20Dashboard.png" alt="Needy Dashboard" align="center" width="70%"> 
+<img src="https://github.com/immanishbainsla/hack-n-cody/blob/master/Food_MSQL/img/Food%20Needy%201.png" alt="Needy Dashboard" align="center" width="70%"> 
 
